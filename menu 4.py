@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #thiago silva lima
 #Analise e desenvolvimento de sistemas 
 
@@ -82,7 +81,6 @@ while True:
 
     # Se a opção do menu principal não for válida, exibe mensagem de erro
     else:
-=======
 #thiago silva lima
 #Analise e desenvolvimento de sistemas 
 
@@ -166,5 +164,4 @@ while True:
 
     # Se a opção do menu principal não for válida, exibe mensagem de erro
     else:
->>>>>>> 18fab86cc5a1f0b8219bea6d9448448ff61c5e57
         print('Opção inválida. Por favor, escolha uma opção válida.')

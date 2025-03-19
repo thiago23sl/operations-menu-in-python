@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # primeiro menu basico  para eu ir em determinados menus
 OpcaoPrimeiroMenu = 0
 nome= []
@@ -59,7 +58,6 @@ while OpcaoPrimeiroMenu != 9:
 print('espere um pouco estamos finalizando')
 print('Finalizando aplicação, obrigado por utilizar nosso Software')
 
-=======
 # primeiro menu basico  para eu ir em determinados menus
 OpcaoPrimeiroMenu = 0
 nome= []
@@ -120,4 +118,3 @@ while OpcaoPrimeiroMenu != 9:
 print('espere um pouco estamos finalizando')
 print('Finalizando aplicação, obrigado por utilizar nosso Software')
 
->>>>>>> 18fab86cc5a1f0b8219bea6d9448448ff61c5e57
