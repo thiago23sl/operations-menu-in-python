@@ -1,8 +1,8 @@
 #thiago silva lima
 #Analise e desenvolvimento de sistemas 
 
-# Inicializa uma lista vazia para armazenar nomes
-nome = []
+# Inicializa uma lista vazia para armazenar informações dos alunos
+informacoes_alunos = []
 
 # Loop principal do programa
 while True:
@@ -39,7 +39,7 @@ while True:
 
         # Loop para o menu secundário correspondente à opção selecionada
         while True:
-            print(f'***** MENU DE {escrito} *****')
+            print(f'***** MENU DE {escrito} *****') 
             OpcaoSegundoMenu = int(input('(1) Incluir'
                                        '\n(2) Listar'
                                        '\n(3) Atualizar'
@@ -51,34 +51,62 @@ while True:
                 print('Voltando ao menu principal.')
                 break
 
-            # Opção para incluir um novo nome
+            # Opção para incluir um aluno
             if OpcaoSegundoMenu == 1:
-                NomeAluno = input('Qual o nome a ser adicionado? ')
-                nome.append(NomeAluno)
+                NomeAluno = input('Qual o nome do aluno a ser adicionado? ')
+                codigo_Aluno = int(input('Qual o código desse aluno? '))
+                Cpf_aluno = input('Qual o CPF dele? ')
 
-            # Opção para listar todos os nomes adicionados
+                informacoes_Aluno = {"nome": NomeAluno, "codigo": codigo_Aluno, "cpf": Cpf_aluno}
+                informacoes_alunos.append(informacoes_Aluno)
+                print('Aluno adicionado com sucesso.')
+
+            # Opção para listar todos os alunos adicionados
             elif OpcaoSegundoMenu == 2:
                 print("-" * 15 + 'LISTANDO' + "-" * 15)
-                if len(nome)==0:
-                    print('não a estudantes cadastrados por favor cadastre um estudante')
+                if len(informacoes_alunos) == 0:
+                    print('Nenhum aluno cadastrado. Por favor, cadastre um aluno.')
                 else:
-                    for aluno in nome:
-                        print(aluno)
+                    for aluno in informacoes_alunos:
+                        print(f"Nome: {aluno['nome']}, Código: {aluno['codigo']}, CPF: {aluno['cpf']}")
 
-            # Opção para atualizar um nome existente (não implementada)
+            # Opção para atualizar um aluno existente
             elif OpcaoSegundoMenu == 3:
                 print("-" * 15 + 'ATUALIZANDO' + "-" * 15)
-                # Implemente a lógica de atualização aqui
+                Codigo_Editar_Aluno = int(input('Qual o código do aluno a ser editado? '))
 
-            # Opção para excluir um nome existente (não implementada)
+                aluno_encontrado = None
+                for aluno in informacoes_alunos:
+                    if aluno['codigo'] == Codigo_Editar_Aluno:
+                        aluno_encontrado = aluno
+                        break
+                
+                if aluno_encontrado:
+                    Novo_NomeAluno = input('Qual o novo nome do aluno? ')
+                    Novo_Cpf_aluno = input('Qual o novo CPF do aluno? ')
+
+                    aluno_encontrado['nome'] = Novo_NomeAluno
+                    aluno_encontrado['cpf'] = Novo_Cpf_aluno
+
+                    print('Aluno atualizado com sucesso.')
+                else:
+                    print('Aluno não encontrado com este código.')
+
+            # Opção para excluir um aluno existente
             elif OpcaoSegundoMenu == 4:
                 print("-" * 15 + 'EXCLUINDO' + "-" * 15)
-                # Implemente a lógica de exclusão aqui
+                Codigo_Excluir_Aluno = int(input('Qual código do aluno você deseja excluir? '))
 
-            # Se a opção não for válida, exibe mensagem de erro
+                for aluno in informacoes_alunos:
+                    if aluno['codigo'] == Codigo_Excluir_Aluno:
+                        informacoes_alunos.remove(aluno)
+                        print(f'Aluno com código {Codigo_Excluir_Aluno} removido com sucesso.')
+                        break
+                else:
+                    print('Aluno não encontrado com este código.')
+
             else:
                 print('Opção inválida. Por favor, escolha uma opção válida.')
 
-    # Se a opção do menu principal não for válida, exibe mensagem de erro
     else:
         print('Opção inválida. Por favor, escolha uma opção válida.')
