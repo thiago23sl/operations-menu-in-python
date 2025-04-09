@@ -142,14 +142,6 @@ Permite controlar as matrículas de alunos nas turmas:
 
 ---
 
-## 📌 Requisitos
-
-- Python 3 instalado
-- Editor de código (VS Code, PyCharm, etc.)
-- Terminal ou prompt de comando
-
----
-
 ## 📥 Execução
 
 ```bash
